@@ -1,0 +1,15 @@
+/* Fill button styling */
+.btnCopy {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  outline: 0;
+  border: 1px solid #999;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+}
+/* End of btncopy Button  */
