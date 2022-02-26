@@ -13,7 +13,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"]
+    }
   },
   "include": [
     "next-env.d.ts",
@@ -22,5 +26,6 @@
     "pages/_document.tsx",
     "pangu.d.ts"
   ],
+
   "exclude": ["node_modules"]
 }

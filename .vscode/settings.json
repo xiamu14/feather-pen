@@ -1,3 +1,9 @@
 {
-  "cSpell.words": ["heti", "pangu"]
+  "cSpell.words": ["heti", "pangu"],
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true,
+    "source.organizeImports": true
+  }
 }

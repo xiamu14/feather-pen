@@ -1,0 +1,66 @@
+.postCard {
+  height: 275px;
+  position: relative;
+  flex-grow: 1;
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  margin: 0.5rem;
+  max-width: 20rem;
+  color: #fff;
+  border-radius: 2rem;
+  overflow: hidden;
+  -webkit-animation: a 0.5s ease-out forwards;
+  animation: a 0.5s ease-out forwards;
+  -webkit-animation-delay: 1.4s;
+  animation-delay: 1.4s;
+  transition: opacity, transform 0.2s ease-out;
+  width: 26%;
+  padding: 1rem;
+}
+
+.postCard:hover {
+  transform: scale(1.05);
+}
+
+.postLink {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0;
+}
+
+.postLink > a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.postImage {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -o-object-fit: cover;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.postOverlay {
+  top: 0;
+  left: 0;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    45deg,
+    rgb(234, 55, 135, 0.8),
+    rgb(240, 145, 73, 0.8)
+  );
+  z-index: -1;
+}

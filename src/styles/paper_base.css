@@ -360,6 +360,10 @@ li {
   list-style: none;
 }
 
+.container .heti {
+  font-size: 18px;
+}
+
 .container[data-bg-grid="grid-12"] {
   background-size: 100% 12px;
   background-image: linear-gradient(transparent 11px, #ededed 1px),
@@ -914,13 +918,12 @@ a {
 @media screen and (min-width: 640px) {
   body {
     min-width: 640px;
-    background-color: #ededed;
   }
   .container {
     box-sizing: border-box;
-    width: 80%;
+    width: 100%;
     min-width: 640px;
-    max-width: 768px;
+    max-width: 968px;
     margin-block-start: 48px;
     margin-block-end: 72px;
     margin-inline-start: auto;
@@ -930,7 +933,6 @@ a {
     padding-inline-start: 48px;
     padding-inline-end: 48px;
     border-radius: 2px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.32);
     background-color: white;
   }
   .section {

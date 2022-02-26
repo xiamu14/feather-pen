@@ -1,0 +1,39 @@
+.header {
+  background: rgba(242, 243, 245, 0.9);
+  position: fixed;
+  width: 100%;
+  padding: 0 10%;
+  z-index: 70;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+
+.logoText {
+  width: 120px;
+}
+
+.menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 4rem;
+  max-height: none;
+}
+
+.menu > li {
+  padding: 20px;
+}
