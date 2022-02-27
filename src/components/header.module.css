@@ -36,4 +36,11 @@
 
 .menu > li {
   padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.menu > li:last-child {
+  width: 110px;
+  justify-content: space-between;
 }

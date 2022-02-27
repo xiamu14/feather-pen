@@ -2,6 +2,7 @@ import LogoText from "@src/assets/images/logo-text.png";
 import LogoImg from "@src/assets/images/logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import { BsGithub, BsTwitter } from "react-icons/bs";
 import style from "./header.module.css";
 
 export default function Header() {
@@ -31,32 +32,22 @@ export default function Header() {
         </li>
         <li>
           <a
-            className="linkedin"
-            href="https://www.linkedin.com/in/areknawo/"
-            title="linkedin"
-          >
-            <i className="icons icons-linkedin"></i>
-          </a>
-          <a
             className="github"
-            href="https://github.com/areknawo"
+            href="https://github.com/xiamu14"
             title="github"
+            target="_blank"
+            rel="noreferrer"
           >
-            <i className="icons icons-github"></i>
-          </a>
-          <a
-            className="facebook"
-            href="https://www.facebook.com/areknawoblog"
-            title="areknawoblog"
-          >
-            <i className="icons icons-facebook"></i>
+            <BsGithub size={20} />
           </a>
           <a
             className="twitter"
-            href="https://twitter.com/areknawo"
-            title="@areknawo"
+            href="https://twitter.com/BenjarminX"
+            title="@BenjarminX"
+            target="_blank"
+            rel="noreferrer"
           >
-            <i className="icons icons-twitter"></i>
+            <BsTwitter size={20} />
           </a>
         </li>
       </ul>

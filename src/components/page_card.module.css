@@ -1,10 +1,11 @@
 .postCard {
-  height: 275px;
+  height: 294px;
   position: relative;
   flex-grow: 1;
   width: 20%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 2rem;
   margin: 0.5rem;
   max-width: 20rem;
@@ -17,7 +18,6 @@
   animation-delay: 1.4s;
   transition: opacity, transform 0.2s ease-out;
   width: 26%;
-  padding: 1rem;
 }
 
 .postCard:hover {
@@ -51,6 +51,10 @@
   z-index: -2;
 }
 
+.postImage > span {
+  position: unset !important;
+}
+
 .postOverlay {
   top: 0;
   left: 0;
@@ -59,8 +63,23 @@
   width: 100%;
   background-image: linear-gradient(
     45deg,
-    rgb(234, 55, 135, 0.8),
-    rgb(240, 145, 73, 0.8)
+    rgb(234, 55, 135, 0.9),
+    rgb(240, 145, 73, 0.9)
   );
   z-index: -1;
+}
+
+.postDate {
+  font-size: 17px;
+}
+
+.postTitle {
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.postMore {
+  display: flex;
+  align-items: center;
 }
