@@ -1,6 +1,7 @@
 import PageCard from "@src/components/page_card";
 import PageWrapper from "@src/components/page_wrapper";
 import type { NextPage } from "next";
+import style from "./index.module.css";
 
 const Home: NextPage = () => {
   return (
@@ -13,13 +14,7 @@ const Home: NextPage = () => {
           width: "80%",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
+        <div className={style["paperCardList"]}>
           {[
             {
               href: "",

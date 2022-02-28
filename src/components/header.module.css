@@ -2,7 +2,7 @@
   background: rgba(242, 243, 245, 0.9);
   position: fixed;
   width: 100%;
-  padding: 0 10%;
+  padding: 0 8%;
   z-index: 70;
   display: flex;
   justify-content: space-between;
@@ -23,7 +23,7 @@
 }
 
 .logoText {
-  width: 120px;
+  width: 110px;
 }
 
 .menu {
@@ -41,6 +41,6 @@
 }
 
 .menu > li:last-child {
-  width: 110px;
+  width: 100px;
   justify-content: space-between;
 }
