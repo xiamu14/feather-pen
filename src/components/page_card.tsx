@@ -6,27 +6,25 @@ import style from "./page_card.module.css";
 interface Props {
   title: string;
   excerpt: string;
-  updateAt: number;
+  updatedAt: string;
   href: string;
 }
-export default function PageCard() {
+export default function PageCard({ href, updatedAt, title, excerpt }: Props) {
   return (
     <div className={style["postCard"]}>
       <article className="heti heti--classic">
         <div className={style["postLink"]}>
-          <Link href="/paper/tree">tree</Link>
+          <Link href={`/paper${href}`}>link</Link>
         </div>
         <div className={style["postImage"]}>
           <Image src={TestImg} alt="" />
         </div>
         <div className={style["postOverlay"]}></div>
         <span className="postMeta">
-          <span className={style["postDate"]}>2022年2月27日</span>
+          <span className={style["postDate"]}>{updatedAt}</span>
         </span>
-        <h2 className={style["postTitle"]}>编程逻辑-关于 N 叉树数据结构</h2>
-        <p className="postExcerpt">
-          在层叠组件例如菜单组中使用 N 叉树数据结构优化编程逻辑的思考…
-        </p>
+        <h2 className={style["postTitle"]}>{title}</h2>
+        <p className="postExcerpt">{excerpt.slice(0, 34)}...</p>
         <span className={style["postMore"]}>
           全文...
           <FiChevronRight color="white" font-size={18} />

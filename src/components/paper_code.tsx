@@ -1,6 +1,6 @@
-import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/duotoneLight";
+import theme from "prism-react-renderer/themes/nightOwlLight";
+import React from "react";
 import style from "./paper.module.css";
 
 interface Props {
@@ -13,7 +13,7 @@ export default function Code(props: Props) {
     navigator.clipboard.writeText(props.code);
   };
   return (
-    <div style={{ position: "relative" }}>
+    <div className={style["paperCodeBox"]}>
       <Highlight
         {...defaultProps}
         code={props.code}

@@ -13,3 +13,11 @@
   background-color: rgba(0, 0, 0, 0);
 }
 /* End of btncopy Button  */
+
+.paperCodeBox {
+  position: relative;
+  background-color: #fbfbfb;
+  padding: 0 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}

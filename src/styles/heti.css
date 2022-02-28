@@ -324,8 +324,8 @@ font-face {
 }
 
 .heti pre {
-  margin-block-start: 12px;
-  margin-block-end: 12px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
   margin-inline-start: 0;
   margin-inline-end: 0;
   padding-block-start: 12px;

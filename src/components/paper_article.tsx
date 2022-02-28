@@ -9,10 +9,11 @@ interface Props {
   description?: JSX.Element;
   blockquote?: JSX.Element;
   nav?: Nav[];
+  tailDivider?: boolean;
 }
 
 export default function PaperArticle(props: React.PropsWithChildren<Props>) {
-  const { title, blockquote, nav, description } = props;
+  const { title, blockquote, nav, description, tailDivider = true } = props;
 
   return (
     <article className="article heti heti--classic">
@@ -46,7 +47,7 @@ export default function PaperArticle(props: React.PropsWithChildren<Props>) {
         </nav>
       )}
       {description}
-      <hr></hr>
+      {tailDivider ? <hr></hr> : null}
       {props.children}
     </article>
   );
