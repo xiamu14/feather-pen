@@ -914,26 +914,26 @@ a {
   margin-block-end: 12px;
   overflow: auto;
 }
+.container {
+  box-sizing: border-box;
+  width: 80%;
+  min-width: 640px;
+  max-width: 1268px;
+  margin-block-start: 48px;
+  margin-block-end: 72px;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  padding-block-start: 48px;
+  padding-block-end: 48px;
+  padding-inline-start: 48px;
+  padding-inline-end: 48px;
+  border-radius: 2px;
+  background-color: white;
+}
 
 @media screen and (min-width: 640px) {
   body {
     min-width: 640px;
-  }
-  .container {
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 640px;
-    max-width: 968px;
-    margin-block-start: 48px;
-    margin-block-end: 72px;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
-    padding-block-start: 48px;
-    padding-block-end: 48px;
-    padding-inline-start: 48px;
-    padding-inline-end: 48px;
-    border-radius: 2px;
-    background-color: white;
   }
   .section {
     max-height: none;
