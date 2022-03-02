@@ -361,7 +361,7 @@ li {
 }
 
 .container .heti {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .container[data-bg-grid="grid-12"] {
@@ -1009,4 +1009,6 @@ a {
 
 .paper-wrapper {
   color: #454545 !important;
+  padding-top: 98px;
+  margin-top: 0;
 }

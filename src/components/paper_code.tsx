@@ -1,10 +1,16 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
+//@ts-ignore
+import Prism from "prism-react-renderer/prism";
 import theme from "prism-react-renderer/themes/nightOwlLight";
 import React from "react";
 import style from "./paper.module.css";
+//@ts-ignore
+(typeof global !== "undefined" ? global : window).Prism = Prism;
+
+require("prismjs/components/prism-dart");
 
 interface Props {
-  lang: "jsx" | "tsx" | "json" | "css" | "javascript" | "typescript";
+  lang: "jsx" | "tsx" | "json" | "css" | "javascript" | "typescript" | "dart";
   code: string;
 }
 
@@ -17,7 +23,7 @@ export default function Code(props: Props) {
       <Highlight
         {...defaultProps}
         code={props.code}
-        language={props.lang}
+        language={props.lang as any}
         theme={theme}
       >
         {({ className, style, tokens, getLineProps, getTokenProps }) => (

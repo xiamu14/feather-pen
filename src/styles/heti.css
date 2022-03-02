@@ -595,7 +595,7 @@ font-face {
   margin-inline-start: 1px;
   margin-inline-end: 1px;
   background-color: #d3adf7;
-  color: #666 !important;
+  color: #333 !important;
 }
 
 [data-darkmode="dark"] .heti mark {
