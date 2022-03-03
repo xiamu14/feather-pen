@@ -1,7 +1,7 @@
 import Highlight, { defaultProps } from "prism-react-renderer";
 //@ts-ignore
 import Prism from "prism-react-renderer/prism";
-import theme from "prism-react-renderer/themes/nightOwlLight";
+import theme from "prism-react-renderer/themes/github";
 import React from "react";
 import style from "./paper.module.css";
 //@ts-ignore
