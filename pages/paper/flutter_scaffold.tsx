@@ -3,7 +3,7 @@ import PaperArticle from "@src/components/paper_article";
 import Code from "@src/components/paper_code";
 import PaperWrapper from "@src/components/paper_wrapper";
 
-export default function FlutterWidgetScaffold() {
+export default function FlutterScaffold() {
   return (
     <PageWrapper>
       <PaperWrapper>
