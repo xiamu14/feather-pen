@@ -14,7 +14,7 @@ interface Props {
   code: string;
 }
 
-export default function Code(props: Props) {
+const Code = (props: Props) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(props.code);
   };
@@ -45,4 +45,6 @@ export default function Code(props: Props) {
       </button>
     </div>
   );
-}
+};
+
+export default Code;

@@ -46,6 +46,9 @@ pre[class*="language-"] {
   padding: 1em 1em;
   margin: 0;
   overflow: auto;
+  padding-top: 16px !important;
+  padding-right: 66px !important;
+  min-height: 58px;
 }
 
 :not(pre) > code[class*="language-"],

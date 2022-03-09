@@ -53,3 +53,7 @@ body {
   --grey-bg-color: #8fa6b2;
   --dark-color: #0c344b;
 }
+
+pre {
+  padding: 8px !important;
+}

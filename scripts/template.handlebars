@@ -1,0 +1,24 @@
+import PageWrapper from "@src/components/page_wrapper";
+import PaperArticle from "@src/components/paper_article";
+import Code from "@src/components/paper_code";
+import Picture from "@src/components/paper_image";
+import PaperWrapper from "@src/components/paper_wrapper";
+
+export default function Article() {
+  return (
+    <PageWrapper>
+      <PaperWrapper>
+        <PaperArticle
+          title="{{title}}"
+          description={
+            <>
+              {{desc}}
+            </>
+          }
+        >
+          {{content}}
+        </PaperArticle>
+      </PaperWrapper>
+    </PageWrapper>
+  );
+}

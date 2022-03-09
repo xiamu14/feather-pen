@@ -10,21 +10,25 @@
     "generate": "node --loader tsm scripts/rendermd.ts"
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "markdown-it": "^12.3.2",
     "next": "12.1.0",
     "pangu": "^4.0.7",
+    "prettier": "^2.5.1",
     "prism-react-renderer": "^1.3.1",
     "prismjs": "^1.27.0",
+    "rd": "^2.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1"
   },
   "devDependencies": {
     "@types/markdown-it": "^12.2.3",
-    "@types/node": "17.0.21",
+    "@types/node": "^17.0.21",
+    "@types/prettier": "^2.4.4",
     "@types/react": "17.0.39",
     "eslint": "8.10.0",
     "eslint-config-next": "12.1.0",
-    "markdown-it": "^12.3.2",
     "tsm": "^2.2.1",
     "typescript": "4.5.5"
   }

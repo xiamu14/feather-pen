@@ -23,9 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/_document.tsx",
-    "pangu.d.ts"
+    "pages/*.tsx",
+    "types/*.d.ts"
   ],
-
   "exclude": ["node_modules"]
 }
