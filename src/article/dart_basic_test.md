@@ -1,6 +1,8 @@
 {
 "title": "dart 基础",
-"updateAt": "2022 年 3 月 8 日"
+"updatedAt": "2022 年 3 月 8 日",
+"excerpt":"Dart 是一个为全平台构建快速应用的客户端优化的编程语言。",
+"published":false
 }
 
 ---

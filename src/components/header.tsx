@@ -1,5 +1,5 @@
-import LogoText from "@src/assets/images/logo-text.png";
-import LogoImg from "@src/assets/images/logo.png";
+import LogoText from "@src/assets/images/tiny/logo-text.png";
+import LogoImg from "@src/assets/images/tiny/logo.png";
 import Image from "next/image";
 import Link from "next/link";
 import { BsGithub, BsTwitter } from "react-icons/bs";

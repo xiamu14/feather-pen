@@ -1,3 +1,7 @@
+import articles from "./article_list.json";
+
+const publishedArticles = articles.filter((it) => it.published);
+
 const articleList = [
   {
     href: "/tree_structure",
@@ -12,6 +16,7 @@ const articleList = [
     updatedAt: "2022年3月2日",
     excerpt: "Dart 是一个为全平台构建快速应用的客户端优化的编程语言。",
   },
+  ...publishedArticles,
 ];
 
 export default articleList;

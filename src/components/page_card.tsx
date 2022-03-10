@@ -1,4 +1,4 @@
-import TestImg from "@src/assets/images/2.jpeg";
+import TestImg from "@src/assets/images/tiny/2.jpeg";
 import Image from "next/image";
 import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
@@ -27,7 +27,7 @@ export default function PageCard({ href, updatedAt, title, excerpt }: Props) {
         <p className="postExcerpt">{excerpt.slice(0, 34)}...</p>
         <span className={style["postMore"]}>
           全文...
-          <FiChevronRight color="white" font-size={18} />
+          <FiChevronRight color="white" size={18} />
         </span>
       </article>
     </div>

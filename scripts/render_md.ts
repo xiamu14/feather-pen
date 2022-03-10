@@ -12,6 +12,9 @@ const template = readFileSync(
   path.resolve(rootDir, "scripts/template.handlebars"),
   "utf-8"
 );
+
+const articleList: any[] = [];
+
 // 异步列出目录下的所有文件
 rd.read("src/article", function (err, files) {
   if (err) throw err;
@@ -27,6 +30,10 @@ rd.read("src/article", function (err, files) {
       parseHtml(result, articleName);
     }
   });
+  writeFileSync(
+    path.resolve(rootDir, `src/article_list.json`),
+    `${JSON.stringify(articleList, null, "\t")}`
+  );
 });
 
 function parseHtml(html: string, articleName: string) {
@@ -52,7 +59,10 @@ function parseHtml(html: string, articleName: string) {
       .replaceAll(/<\/?pre>/g, "");
 
     const formatArticle = prettier.format(article);
-
+    articleList.push({
+      href: `/${articleName}`,
+      ...meta,
+    });
     writeFileSync(
       path.resolve(rootDir, `pages/paper/${articleName}.tsx`),
       `${formatArticle}`

@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "generate": "node --loader tsm scripts/rendermd.ts"
+    "generate": "node --loader tsm scripts/render_md.ts",
+    "tiny": "node scripts/super_tinypng.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",

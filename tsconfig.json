@@ -24,7 +24,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/*.tsx",
-    "types/*.d.ts"
+    "types/*.d.ts",
+    "scripts/super_tinypng.js"
   ],
   "exclude": ["node_modules"]
 }
