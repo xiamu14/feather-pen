@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
+    "colors": "^1.4.0",
     "markdown-it": "^12.3.2",
     "next": "12.1.0",
     "pangu": "^4.0.7",

@@ -1,4 +1,6 @@
 import { load } from "cheerio";
+import colors from "colors";
+import crypto from "crypto";
 import { readFileSync, statSync, writeFileSync } from "fs";
 import MarkdownIt from "markdown-it";
 import path from "path";
@@ -13,7 +15,16 @@ const template = readFileSync(
   "utf-8"
 );
 
+const articleMd5String = readFileSync(
+  path.resolve(rootDir, "scripts/md5.json"),
+  "utf-8"
+);
+
+const articleMd5 = JSON.parse(articleMd5String);
+
 const articleList: any[] = [];
+
+const hash = crypto.createHash("md5");
 
 // 异步列出目录下的所有文件
 rd.read("src/article", function (err, files) {
@@ -25,14 +36,29 @@ rd.read("src/article", function (err, files) {
 
       const articleContent = readFileSync(file, "utf-8");
 
-      const result = md.render(articleContent, {});
-      console.log(result);
-      parseHtml(result, articleName);
+      // TODO: 计算内容的 md5
+
+      hash.update(articleContent, "utf8");
+      const md5 = hash.digest("hex");
+
+      if (
+        !(articleName in articleMd5) ||
+        (articleName in articleMd5 && articleMd5[articleName] !== md5)
+      ) {
+        console.log(colors.cyan(`生成文章:${articleName}`));
+        articleMd5[articleName] = md5;
+        const result = md.render(articleContent, {});
+        parseHtml(result, articleName);
+      }
     }
   });
   writeFileSync(
     path.resolve(rootDir, `src/article_list.json`),
     `${JSON.stringify(articleList, null, "\t")}`
+  );
+  writeFileSync(
+    path.resolve(rootDir, "scripts/md5.json"),
+    `${JSON.stringify(articleMd5, null, "\t")}`
   );
 });
 
