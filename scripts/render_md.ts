@@ -24,8 +24,6 @@ const articleMd5 = JSON.parse(articleMd5String);
 
 const articleList: any[] = [];
 
-const hash = crypto.createHash("md5");
-
 // 异步列出目录下的所有文件
 rd.read("src/article", function (err, files) {
   if (err) throw err;
@@ -37,6 +35,7 @@ rd.read("src/article", function (err, files) {
       const articleContent = readFileSync(file, "utf-8");
 
       // TODO: 计算内容的 md5
+      const hash = crypto.createHash("md5");
 
       hash.update(articleContent, "utf8");
       const md5 = hash.digest("hex");
@@ -129,7 +128,9 @@ function parseAll(html: string) {
     const code = $(element).find("code");
     const language =
       code.attr("class")?.match(/language-([a-z]+)/)?.[1] ?? "js";
-    $(element).text(`<p><Code lang="${language}" code='${code.text()}' /></p>`);
+    $(element).text(
+      `<p><Code lang="${language}" code={\`${code.text()}\`} /></p>`
+    );
   });
 
   return $.html("body").replace(/&lt;/g, "<").replace(/&gt;/g, ">");

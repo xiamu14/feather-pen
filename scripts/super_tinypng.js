@@ -92,8 +92,12 @@ function fileUpload(img) {
 }
 // 该方法被循环调用,请求图片数据
 function fileUpdate(imgPath, obj) {
-  const outputDir = path.join(root, "tiny");
-  const tinyImgPath = path.join(root, "tiny", imgPath.replace(root, ""));
+  const outputDir = path.join(cwd, "public/paper/images");
+  const tinyImgPath = path.join(
+    cwd,
+    "public/paper/images",
+    imgPath.replace(root, "")
+  );
 
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir);
