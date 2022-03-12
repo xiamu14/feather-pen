@@ -44,7 +44,7 @@ export default function Article() {
             </li>
           </ol>
           <h4>钱包(wallet)</h4>
-          <ol start="2">
+          <ol>
             <li>固定用途</li>
             <li>余额</li>
           </ol>
