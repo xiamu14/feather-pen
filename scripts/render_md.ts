@@ -6,6 +6,7 @@ import MarkdownIt from "markdown-it";
 import path from "path";
 import prettier from "prettier";
 import rd from "rd";
+import { URLSearchParams } from "url";
 const md = new MarkdownIt();
 
 const rootDir = process.cwd();
@@ -128,14 +129,21 @@ function parseAll(html: string) {
   const imgs = $("img");
   imgs.map((_, element) => {
     const srcMeta = $(element).attr("src")?.split("?");
-    const src = srcMeta?.[0];
-    const metaArray = srcMeta?.[1].split("&").map((item) => {
-      return item.split("=");
-    });
-    const meta = { w: metaArray?.[0][1], h: metaArray?.[1][1] };
-    $(element).replaceWith(
-      `<Picture src="${src}" width="${meta.w}" height="${meta.h}" />`
-    );
+    if (srcMeta?.length === 2) {
+      const imageUrlSearchParams = new URLSearchParams(srcMeta[1]);
+      const width = imageUrlSearchParams.get("w");
+      const height = imageUrlSearchParams.get("h");
+      const border =
+        imageUrlSearchParams.get("border") === "true" ? true : false;
+      console.log(width, height, border);
+      const src = srcMeta?.[0];
+
+      $(element).replaceWith(
+        `<Picture src="${src}" width="${width}" height="${height}" border="${border}" />`
+      );
+    } else {
+      console.log("图片缺少宽高");
+    }
   });
   const pres = $("pre");
   pres.map((_, element) => {

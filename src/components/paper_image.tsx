@@ -6,7 +6,7 @@ interface Props {
   metadata?: { w: number; h: number };
   width?: string;
   height?: string;
-  border?: boolean;
+  border?: boolean | string;
   alt?: string;
 }
 
@@ -39,7 +39,7 @@ export default function Picture(props: Props) {
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        border: border ? "1px solid #ededed" : "none",
+        border: border && border !== "false" ? "1px solid #ededed" : "none",
       }}
     >
       <NextImage src={src} alt={alt} {...renderSize} />

@@ -57,7 +57,40 @@ export default function Article() {
             <li>消费类目的饼图</li>
           </ol>
           <h4>消费分析/建议</h4>
-          <p>???</p>
+          <p>？？？</p>
+          <h3>数据安全，存储至个人网盘</h3>
+          <p>
+            <Picture
+              src="/paper/images/cat_wallet_draft_safe.png"
+              width="1380"
+              height="888"
+              border="true"
+            ></Picture>
+          </p>
+          <p>iCloud 同步</p>
+          <h2>思考</h2>
+          <h3>为什么不？</h3>
+          <ol>
+            <li>
+              为什么不显示“本月结余”等类似结余金额？答：因为大多数 App
+              显示的结余金额都比较明显，但这会给使用者带来压力。我希望软件使用过程中尽可能避免这类带来压力的设计。当然，预算计划依然存在，只是会在统计图表和分析以隐含的方式展示消费和预算之间的差距，减少使用时的压力。
+            </li>
+          </ol>
+          <h2>参考借鉴</h2>
+          <h3>巨大的 emoji</h3>
+          <p>
+            <Picture
+              src="/paper/images/cat_wallet_draft_emoji.png"
+              width="1424"
+              height="1586"
+              border="true"
+            ></Picture>
+          </p>
+          <h3>家庭记账</h3>
+          <p>
+            <a href="https://sspai.com/post/67196">参考链接</a>
+          </p>
+          <h3>导出功能</h3>
         </PaperArticle>
       </PaperWrapper>
     </PageWrapper>
