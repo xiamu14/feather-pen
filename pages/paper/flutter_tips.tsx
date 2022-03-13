@@ -12,23 +12,26 @@ export default function Article() {
           title="Flutter Tips"
           description={
             <>
-              <h2>Flutter Tips</h2>
               <p>flutter tips collection.</p>
-            </>
-          }
-        >
-          <h2>Custom Widget</h2>
-          <h3>Spacing design 8 rule</h3>
-          <h4>What is the 8 rule?</h4>
-          <p>
-            The theory is quite simple: the idea is that all the elements in
-            your design are a multiple of 8 in terms of width and height, just
-            as their spacing.
-          </p>
-          <p>
-            <Code
-              lang="dart"
-              code={`class AppSpacer extends StatelessWidget {
+              <h2>
+                <Picture
+                  src="/paper/images/flutter_tips_excerpt.svg"
+                  width="725"
+                  height="434"
+                ></Picture>
+              </h2>
+              <h2>1. Custom Widget</h2>
+              <h3>Spacing design 8 rule</h3>
+              <h4>What is the 8 rule?</h4>
+              <p>
+                The theory is quite simple: the idea is that all the elements in
+                your design are a multiple of 8 in terms of width and height,
+                just as their spacing.
+              </p>
+              <p>
+                <Code
+                  lang="dart"
+                  code={`class AppSpacer extends StatelessWidget {
   final double? width;
   final double? height;
 
@@ -48,53 +51,54 @@ export default function Article() {
   }
 }
 `}
-            />
-          </p>
-          <h2>Optimize code</h2>
-          <h3>Create widgets configurations</h3>
-          <p>
-            <Picture
-              src="/paper/images/create_widgets_configurations.jpeg"
-              width="1600"
-              height="900"
-            ></Picture>
-          </p>
-          <p>keyword：factory</p>
-          <h3>How to store sensitive data on phone?</h3>
-          <p>
-            Don't locally store passwords or other sensitives data in clear text
-          </p>
-          <p>Using flutter_secure_storage plugin</p>
-          <p>
-            <Code
-              lang="dart"
-              code={`// Create storage
+                />
+              </p>
+              <h2>2. Optimize code</h2>
+              <h3>Create widgets configurations</h3>
+              <p>
+                <Picture
+                  src="/paper/images/create_widgets_configurations.jpeg"
+                  width="1600"
+                  height="900"
+                ></Picture>
+              </p>
+              <p>keyword：factory</p>
+              <h3>How to store sensitive data on phone?</h3>
+              <p>
+                Don't locally store passwords or other sensitives data in clear
+                text
+              </p>
+              <p>Using flutter_secure_storage plugin</p>
+              <p>
+                <Code
+                  lang="dart"
+                  code={`// Create storage
 final storage = new FlutterSecureStorage();
 // Read value
 String value = await storage.read(key:key);
 // Write value
 await storage.write(key:key, value:value);
 `}
-            />
-          </p>
-          <h2>Cool Style</h2>
-          <h3>Glass Effect</h3>
-          <p>
-            <Picture
-              src="/paper/images/glass_effect.jpeg"
-              width="1728"
-              height="895"
-            ></Picture>
-          </p>
-          <p>
-            If you've seen that cool Glass effect in UI design and wanted to add
-            it to your app, you can easily do so with the BlackdropFilter
-            widget.
-          </p>
-          <p>
-            <Code
-              lang="dart"
-              code={`ClipRect(
+                />
+              </p>
+              <h2>3. Cool Style</h2>
+              <h3>Glass Effect</h3>
+              <p>
+                <Picture
+                  src="/paper/images/glass_effect.jpeg"
+                  width="1728"
+                  height="895"
+                ></Picture>
+              </p>
+              <p>
+                If you've seen that cool Glass effect in UI design and wanted to
+                add it to your app, you can easily do so with the
+                BlackdropFilter widget.
+              </p>
+              <p>
+                <Code
+                  lang="dart"
+                  code={`ClipRect(
   child: BackdropFilter(
     filter: ImageFilter.blur(
       sigmaX: 15,
@@ -104,9 +108,13 @@ await storage.write(key:key, value:value);
   ),
 )
 `}
-            />
-          </p>
-        </PaperArticle>
+                />
+              </p>
+              <h2>4. Package</h2>
+              <h2>Source Code Analyze</h2>
+            </>
+          }
+        ></PaperArticle>
       </PaperWrapper>
     </PageWrapper>
   );

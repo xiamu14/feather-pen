@@ -57,7 +57,7 @@ export default function Article() {
             <li>消费类目的饼图</li>
           </ol>
           <h4>消费分析/建议</h4>
-          <p>？？？</p>
+          <p>???</p>
         </PaperArticle>
       </PaperWrapper>
     </PageWrapper>

@@ -20,6 +20,13 @@ const articleMd5String = readFileSync(
   "utf-8"
 );
 
+const articleListOldString = readFileSync(
+  path.resolve(rootDir, "src/article_list.json"),
+  "utf-8"
+);
+
+const articleListOld: any[] = JSON.parse(articleListOldString);
+
 const articleMd5 = JSON.parse(articleMd5String);
 
 const articleList: any[] = [];
@@ -51,9 +58,16 @@ rd.read("src/article", function (err, files) {
       }
     }
   });
+
+  const articleListNoChanged = articleListOld.filter((item) => {
+    return articleList.every((it) => it.title !== item.title);
+  });
+
+  const finalArticleList = [...articleListNoChanged, ...articleList];
+
   writeFileSync(
     path.resolve(rootDir, `src/article_list.json`),
-    `${JSON.stringify(articleList, null, "\t")}`
+    `${JSON.stringify(finalArticleList, null, "\t")}`
   );
   writeFileSync(
     path.resolve(rootDir, "scripts/md5.json"),
