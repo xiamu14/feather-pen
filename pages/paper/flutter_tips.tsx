@@ -18,6 +18,7 @@ export default function Article() {
                   src="/paper/images/flutter_tips_excerpt.svg"
                   width="725"
                   height="434"
+                  border="false"
                 ></Picture>
               </h2>
               <h2>1. Custom Widget</h2>
@@ -53,6 +54,22 @@ export default function Article() {
 `}
                 />
               </p>
+              <h3>Rounded Corners for Images</h3>
+              <p>
+                <Code
+                  lang="dart"
+                  code={`ClipRect(
+  borderRadius: BorderRadius.circular(8.0),
+  child: Image.network(
+    'https://example.com/image.jpg',
+    height: 150.0,
+    width: 150.0,
+    fix: BoxFit.cover,
+  ),
+)
+`}
+                />
+              </p>
               <h2>2. Optimize code</h2>
               <h3>Create widgets configurations</h3>
               <p>
@@ -60,6 +77,7 @@ export default function Article() {
                   src="/paper/images/create_widgets_configurations.jpeg"
                   width="1600"
                   height="900"
+                  border="false"
                 ></Picture>
               </p>
               <p>keyword：factory</p>
@@ -88,6 +106,7 @@ await storage.write(key:key, value:value);
                   src="/paper/images/glass_effect.jpeg"
                   width="1728"
                   height="895"
+                  border="false"
                 ></Picture>
               </p>
               <p>
@@ -110,8 +129,58 @@ await storage.write(key:key, value:value);
 `}
                 />
               </p>
+              <h3>Change Text Field Height &amp; Width</h3>
+              <p>
+                You can change the height and width of the TextField widget
+                using the following methods.
+              </p>
+              <p>
+                <Code
+                  lang="dart"
+                  code={`SizedBox(
+  height: 50,
+  child: TextField(),
+)
+
+TextField(
+  decoration: const InputDecoration(
+    isDense: true,
+    contentPadding: const EdgeInsets.symmetric(
+      vertical: 40.0,
+      horizontal: 20.0
+    ),
+  ),
+)
+`}
+                />
+              </p>
+              <h3>Implement Animation Guide</h3>
+              <p>
+                <Picture
+                  src="/paper/images/flutter_tips_animation_guide.jpeg"
+                  width="1019"
+                  height="1125"
+                  border="true"
+                ></Picture>
+              </p>
               <h2>4. Package</h2>
-              <h2>Source Code Analyze</h2>
+              <h2>5. Source Code Analyze</h2>
+              <h2>6. Debug And Test</h2>
+              <h3>Waiting for another flutter command to release</h3>
+              <p>
+                Did you ever encounter the following issue while trying to run a
+                Flutter app?
+              </p>
+              <p>This is How to fix it👇</p>
+              <p>
+                <Code
+                  lang="js"
+                  code={`// 1. Try restarting the IDE
+// 2. Run following command in terminal
+killall -9 dart
+`}
+                />
+              </p>
             </>
           }
         ></PaperArticle>

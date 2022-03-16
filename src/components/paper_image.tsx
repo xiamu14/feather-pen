@@ -8,10 +8,11 @@ interface Props {
   height?: string;
   border?: boolean | string;
   alt?: string;
+  scale?: string;
 }
 
 export default function Picture(props: Props) {
-  const { src, border = false, alt = "illustration" } = props;
+  const { src, border = false, alt = "illustration", scale = "0.96" } = props;
   const boxRef = useRef<HTMLDivElement>(null);
   const [renderSize, setRenderSize] = useState({ width: 0, height: 0 });
 
@@ -21,7 +22,7 @@ export default function Picture(props: Props) {
         props.metadata?.w ?? parseInt(props.width ?? "", 10);
       const originalHeight =
         props.metadata?.h ?? parseInt(props.height ?? "", 10);
-      const width = Math.floor(boxRef.current.clientWidth * 0.96);
+      const width = Math.floor(boxRef.current.clientWidth * parseFloat(scale));
       const height = Math.floor(
         (width * (originalHeight as number)) / (originalWidth as number)
       );

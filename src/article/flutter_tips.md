@@ -41,6 +41,20 @@ class AppSpacer extends StatelessWidget {
 }
 ```
 
+### Rounded Corners for Images
+
+```dart
+ClipRect(
+  borderRadius: BorderRadius.circular(8.0),
+  child: Image.network(
+    'https://example.com/image.jpg',
+    height: 150.0,
+    width: 150.0,
+    fix: BoxFit.cover,
+  ),
+)
+```
+
 ## 2. Optimize code
 
 ### Create widgets configurations
@@ -84,6 +98,45 @@ ClipRect(
 )
 ```
 
+### Change Text Field Height & Width
+
+You can change the height and width of the TextField widget using the following methods.
+
+```dart
+SizedBox(
+  height: 50,
+  child: TextField(),
+)
+
+TextField(
+  decoration: const InputDecoration(
+    isDense: true,
+    contentPadding: const EdgeInsets.symmetric(
+      vertical: 40.0,
+      horizontal: 20.0
+    ),
+  ),
+)
+```
+
+### Implement Animation Guide
+
+![](/paper/images/flutter_tips_animation_guide.jpeg?w=1019&h=1125&border=true)
+
 ## 4. Package
 
-## Source Code Analyze
+## 5. Source Code Analyze
+
+## 6. Debug And Test
+
+### Waiting for another flutter command to release
+
+Did you ever encounter the following issue while trying to run a Flutter app?
+
+This is How to fix it👇
+
+```js
+// 1. Try restarting the IDE
+// 2. Run following command in terminal
+killall -9 dart
+```

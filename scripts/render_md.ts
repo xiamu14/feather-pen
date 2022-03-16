@@ -135,11 +135,12 @@ function parseAll(html: string) {
       const height = imageUrlSearchParams.get("h");
       const border =
         imageUrlSearchParams.get("border") === "true" ? true : false;
-      console.log(width, height, border);
+      const scale = imageUrlSearchParams.get("scale") || "0.96";
+      console.log(width, height, border, scale);
       const src = srcMeta?.[0];
 
       $(element).replaceWith(
-        `<Picture src="${src}" width="${width}" height="${height}" border="${border}" />`
+        `<Picture src="${src}" scale="${scale}" width="${width}" height="${height}" border="${border}" />`
       );
     } else {
       console.log("图片缺少宽高");

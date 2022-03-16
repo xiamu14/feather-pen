@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "generate": "node --loader tsm scripts/render_md.ts",
-    "tiny": "node scripts/super_tinypng.js"
+    "tinypng": "node scripts/super_tinypng.js"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.10",
@@ -33,5 +33,8 @@
     "eslint-config-next": "12.1.0",
     "tsm": "^2.2.1",
     "typescript": "4.5.5"
+  },
+  "volta": {
+    "node": "16.14.0"
   }
 }
