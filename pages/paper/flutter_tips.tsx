@@ -16,6 +16,7 @@ export default function Article() {
               <h2>
                 <Picture
                   src="/paper/images/flutter_tips_excerpt.svg"
+                  scale="0.96"
                   width="725"
                   height="434"
                   border="false"
@@ -75,6 +76,7 @@ export default function Article() {
               <p>
                 <Picture
                   src="/paper/images/create_widgets_configurations.jpeg"
+                  scale="0.96"
                   width="1600"
                   height="900"
                   border="false"
@@ -104,6 +106,7 @@ await storage.write(key:key, value:value);
               <p>
                 <Picture
                   src="/paper/images/glass_effect.jpeg"
+                  scale="0.96"
                   width="1728"
                   height="895"
                   border="false"
@@ -158,6 +161,7 @@ TextField(
               <p>
                 <Picture
                   src="/paper/images/flutter_tips_animation_guide.jpeg"
+                  scale="0.96"
                   width="1019"
                   height="1125"
                   border="true"
@@ -174,7 +178,7 @@ TextField(
               <p>This is How to fix it👇</p>
               <p>
                 <Code
-                  lang="js"
+                  lang="dart"
                   code={`// 1. Try restarting the IDE
 // 2. Run following command in terminal
 killall -9 dart

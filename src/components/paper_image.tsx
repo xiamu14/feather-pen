@@ -29,7 +29,7 @@ export default function Picture(props: Props) {
 
       setRenderSize({ width, height });
     }
-  }, [props]);
+  }, [props, scale]);
 
   return (
     <div

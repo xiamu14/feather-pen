@@ -135,7 +135,7 @@ Did you ever encounter the following issue while trying to run a Flutter app?
 
 This is How to fix it👇
 
-```js
+```dart
 // 1. Try restarting the IDE
 // 2. Run following command in terminal
 killall -9 dart

@@ -7,17 +7,17 @@
 		"published": false
 	},
 	{
-		"href": "/flutter_tips",
-		"title": "Flutter Tips",
-		"updatedAt": "2022-03-12",
-		"excerpt": "Flutter Tips Collection",
-		"published": true
-	},
-	{
 		"href": "/wonderful_mistake",
 		"title": "各种奇妙的错误",
 		"updatedAt": "2022-03-16",
 		"excerpt": "收集各种意想不到的编程错误，关于代码、开发工具/环境、Git 等",
+		"published": true
+	},
+	{
+		"href": "/flutter_tips",
+		"title": "Flutter Tips",
+		"updatedAt": "2022-03-12",
+		"excerpt": "Flutter Tips Collection",
 		"published": true
 	}
 ]
