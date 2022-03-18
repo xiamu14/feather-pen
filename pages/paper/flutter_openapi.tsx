@@ -28,25 +28,20 @@ export default function Article() {
           <h2>安装 openapi generator</h2>
           <p>mac 用户推荐使用 brew 安装</p>
           <p>
-            <Code
-              lang="jsx"
-              code={`brew install openapi-generator
-`}
-            />
+            <Code lang="bash" code={`brew install openapi-generator`} />
           </p>
           <h2>配置 flutter project</h2>
           <p>
             建议将生成的代码放在和 app 代码同层级的目录中管理，这样在 app
             代码里引用本地包的方式，从而保持 app 代码简洁。在 pubspec.yaml
-            中这样引入本地包
+            中这样引入本地包。
           </p>
           <p>
             <Code
-              lang="jsx"
+              lang="yaml"
               code={`dependencies:
   openapi:
-    path: ../{appName}_api/
-`}
+    path: ../{appName}_api/`}
             />
           </p>
           <p>然后新建 api.dart 文件，写入如下代码：</p>
@@ -58,14 +53,15 @@ export default function Article() {
 final api = Openapi(
   basePathOverride:
       "https://ckzkq7aob142251701s6jejplin7-server-vn57etnuya-ue.a.run.app",
-);
-`}
+);`}
             />
           </p>
           <h2>生成命令</h2>
           <p>
-            openapi-generator generate -i https://xxx/api-json -g dart-dio-next
-            -o ./
+            <Code
+              lang="bash"
+              code={`openapi-generator generate -i https://xxx/api-json -g dart-dio-next -o ./`}
+            />
           </p>
         </PaperArticle>
       </PaperWrapper>

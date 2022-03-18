@@ -17,15 +17,15 @@
 
 mac 用户推荐使用 brew 安装
 
-```jsx
+```bash
 brew install openapi-generator
 ```
 
 ## 配置 flutter project
 
-建议将生成的代码放在和 app 代码同层级的目录中管理，这样在 app 代码里引用本地包的方式，从而保持 app 代码简洁。在 pubspec.yaml 中这样引入本地包
+建议将生成的代码放在和 app 代码同层级的目录中管理，这样在 app 代码里引用本地包的方式，从而保持 app 代码简洁。在 pubspec.yaml 中这样引入本地包。
 
-```jsx
+```yaml
 dependencies:
   openapi:
     path: ../{appName}_api/
@@ -44,4 +44,6 @@ final api = Openapi(
 
 ## 生成命令
 
+```bash
 openapi-generator generate -i https://xxx/api-json -g dart-dio-next -o ./
+```

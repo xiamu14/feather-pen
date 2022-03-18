@@ -149,10 +149,11 @@ function parseAll(html: string) {
   const pres = $("pre");
   pres.map((_, element) => {
     const code = $(element).find("code");
+    const codeText = code.text().replace(/\n$/, "");
     const language =
       code.attr("class")?.match(/language-([a-z]+)/)?.[1] ?? "js";
     $(element).text(
-      `<p><Code lang="${language}" code={\`${code.text()}\`} /></p>`
+      `<p><Code lang="${language}" code={\`${codeText}\`} /></p>`
     );
   });
 
