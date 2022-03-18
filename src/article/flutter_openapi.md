@@ -17,7 +17,7 @@
 
 mac 用户推荐使用 brew 安装
 
-```js
+```jsx
 brew install openapi-generator
 ```
 
@@ -25,7 +25,7 @@ brew install openapi-generator
 
 建议将生成的代码放在和 app 代码同层级的目录中管理，这样在 app 代码里引用本地包的方式，从而保持 app 代码简洁。在 pubspec.yaml 中这样引入本地包
 
-```js
+```jsx
 dependencies:
   openapi:
     path: ../{appName}_api/

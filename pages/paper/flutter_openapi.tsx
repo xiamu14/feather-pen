@@ -29,7 +29,7 @@ export default function Article() {
           <p>mac 用户推荐使用 brew 安装</p>
           <p>
             <Code
-              lang="js"
+              lang="jsx"
               code={`brew install openapi-generator
 `}
             />
@@ -42,7 +42,7 @@ export default function Article() {
           </p>
           <p>
             <Code
-              lang="js"
+              lang="jsx"
               code={`dependencies:
   openapi:
     path: ../{appName}_api/
