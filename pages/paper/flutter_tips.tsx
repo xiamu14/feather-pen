@@ -51,8 +51,7 @@ export default function Article() {
       height:height,
     );
   }
-}
-`}
+}`}
                 />
               </p>
               <h3>Rounded Corners for Images</h3>
@@ -67,11 +66,70 @@ export default function Article() {
     width: 150.0,
     fix: BoxFit.cover,
   ),
-)
-`}
+)`}
+                />
+              </p>
+              <h3>Theme color widget</h3>
+              <p>
+                <Code
+                  lang="dart"
+                  code={`import 'dart:ui';
+
+class AppColors {
+  static const Color textColor = Color(0xFFccc7c5);
+  static const Color mainColor = Color(0xFF89dad0);
+  static const Color iconColor1 = Color(0xFFffd28d);
+  static const Color iconColor2 = Color(0xFFfcab88);
+  static const Color paraColor = Color(0xFF8f837f);
+  static const Color buttonBackgroundColor = Color(0xFFf7f6f4);
+  static const Color signColor = Color(0xFFa9a29f);
+  static const Color titleColor = Color(0xFF5c524f);
+  static const Color mainBlackColor = Color(0xFF332d2b);
+  static const Color yellowColor = Color(0xFFffd379);
+}`}
                 />
               </p>
               <h2>2. Optimize code</h2>
+              <h3>Simplify styling code and reduce nesting</h3>
+              <p>
+                <Code
+                  lang="dart"
+                  code={`class HStack extends Column {
+  HStack(
+    this.childList, {
+    Key? key,
+    MainAxisAlignment main = MainAxisAlignment.start,
+    CrossAxisAlignment cross = CrossAxisAlignment.center,
+  }) : super(
+          key: key,
+          children: childList,
+          mainAxisAlignment: main,
+          crossAxisAlignment: cross,
+        );
+
+  final List<Widget> childList;
+}
+
+class VStack extends Row {
+  VStack(
+    this.childList, {
+    Key? key,
+    MainAxisAlignment main = MainAxisAlignment.start,
+    CrossAxisAlignment cross = CrossAxisAlignment.center,
+  }) : super(
+          key: key,
+          children: childList,
+          mainAxisAlignment: main,
+          crossAxisAlignment: cross,
+        );
+
+  final List<Widget> childList;
+}
+
+Padding(child, all: 12, top: '12', right: ,bottom: ,left: , vertical: horizontal: )
+`}
+                />
+              </p>
               <h3>Create widgets configurations</h3>
               <p>
                 <Picture
@@ -97,8 +155,7 @@ final storage = new FlutterSecureStorage();
 // Read value
 String value = await storage.read(key:key);
 // Write value
-await storage.write(key:key, value:value);
-`}
+await storage.write(key:key, value:value);`}
                 />
               </p>
               <h2>3. Cool Style</h2>
@@ -128,8 +185,7 @@ await storage.write(key:key, value:value);
     ),
     child: Child(),
   ),
-)
-`}
+)`}
                 />
               </p>
               <h3>Change Text Field Height &amp; Width</h3>
@@ -153,8 +209,7 @@ TextField(
       horizontal: 20.0
     ),
   ),
-)
-`}
+)`}
                 />
               </p>
               <h3>Implement Animation Guide</h3>
@@ -181,8 +236,7 @@ TextField(
                   lang="dart"
                   code={`// 1. Try restarting the IDE
 // 2. Run following command in terminal
-killall -9 dart
-`}
+killall -9 dart`}
                 />
               </p>
             </>

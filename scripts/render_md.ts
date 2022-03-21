@@ -1,4 +1,5 @@
 import { load } from "cheerio";
+import chokidar from "chokidar";
 import colors from "colors";
 import crypto from "crypto";
 import { readFileSync, statSync, writeFileSync } from "fs";
@@ -32,49 +33,56 @@ const articleMd5 = JSON.parse(articleMd5String);
 
 const articleList: any[] = [];
 
-// 异步列出目录下的所有文件
-rd.read("src/article", function (err, files) {
-  if (err) throw err;
-  files?.forEach((file) => {
-    const fileStat = statSync(file);
-    if (fileStat.isFile()) {
-      const articleName = path.basename(file).replace(path.extname(file), "");
-
-      const articleContent = readFileSync(file, "utf-8");
-
-      // TODO: 计算内容的 md5
-      const hash = crypto.createHash("md5");
-
-      hash.update(articleContent, "utf8");
-      const md5 = hash.digest("hex");
-
-      if (
-        !(articleName in articleMd5) ||
-        (articleName in articleMd5 && articleMd5[articleName] !== md5)
-      ) {
-        console.log(colors.cyan(`生成文章:${articleName}`));
-        articleMd5[articleName] = md5;
-        const result = md.render(articleContent, {});
-        parseHtml(result, articleName);
-      }
-    }
-  });
-
-  const articleListNoChanged = articleListOld.filter((item) => {
-    return articleList.every((it) => it.title !== item.title);
-  });
-
-  const finalArticleList = [...articleListNoChanged, ...articleList];
-
-  writeFileSync(
-    path.resolve(rootDir, `src/article_list.json`),
-    `${JSON.stringify(finalArticleList, null, "\t")}`
-  );
-  writeFileSync(
-    path.resolve(rootDir, "scripts/md5.json"),
-    `${JSON.stringify(articleMd5, null, "\t")}`
-  );
+chokidar.watch("./src/article/*.md").on("all", (event, path) => {
+  // console.log(event, path);
+  renderMd();
 });
+
+function renderMd() {
+  // 异步列出目录下的所有文件
+  rd.read("src/article", function (err, files) {
+    if (err) throw err;
+    files?.forEach((file) => {
+      const fileStat = statSync(file);
+      if (fileStat.isFile()) {
+        const articleName = path.basename(file).replace(path.extname(file), "");
+
+        const articleContent = readFileSync(file, "utf-8");
+
+        // TODO: 计算内容的 md5
+        const hash = crypto.createHash("md5");
+
+        hash.update(articleContent, "utf8");
+        const md5 = hash.digest("hex");
+
+        if (
+          !(articleName in articleMd5) ||
+          (articleName in articleMd5 && articleMd5[articleName] !== md5)
+        ) {
+          console.log(colors.cyan(`生成文章:${articleName}`));
+          articleMd5[articleName] = md5;
+          const result = md.render(articleContent, {});
+          parseHtml(result, articleName);
+        }
+      }
+    });
+
+    const articleListNoChanged = articleListOld.filter((item) => {
+      return articleList.every((it) => it.title !== item.title);
+    });
+
+    const finalArticleList = [...articleListNoChanged, ...articleList];
+
+    writeFileSync(
+      path.resolve(rootDir, `src/article_list.json`),
+      `${JSON.stringify(finalArticleList, null, "\t")}`
+    );
+    writeFileSync(
+      path.resolve(rootDir, "scripts/md5.json"),
+      `${JSON.stringify(articleMd5, null, "\t")}`
+    );
+  });
+}
 
 function parseHtml(html: string, articleName: string) {
   // 分割
