@@ -1,7 +1,7 @@
 {
 "title":"Flutter Basic",
 "updatedAt":"2022-03-20",
-"excerpt":"Flutter Basic ",
+"excerpt":"Flutter Basic",
 "published":true
 }
 
