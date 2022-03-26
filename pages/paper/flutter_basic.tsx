@@ -119,9 +119,10 @@ CircleAvatar()`}
           </ul>
           <h2>Opacity</h2>
           <p>调整透明度组件</p>
-          <h2>Spacer 和 Expanded</h2>
+          <h2>Spacer 和 Expanded, Flexible</h2>
           <h2>GestureDetector</h2>
           <p>用户手势检测组件，可以给组件添加手势（点击，滑动等）事件</p>
+          <h3>vs. InkWell</h3>
           <h2>Material</h2>
           <p>
             <Code
@@ -140,6 +141,12 @@ CircleAvatar()`}
 ),`}
             />
           </p>
+          <h2>Row, Column , Wrap</h2>
+          <h2>属性类</h2>
+          <h3>Decoration</h3>
+          <h4>clipBehavior</h4>
+          <h4>gradient</h4>
+          <h4>image</h4>
         </PaperArticle>
       </PaperWrapper>
     </PageWrapper>

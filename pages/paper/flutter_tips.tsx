@@ -239,6 +239,13 @@ TextField(
 killall -9 dart`}
                 />
               </p>
+              <h3>Search iOS Simulator Device</h3>
+              <p>
+                <Code
+                  lang="bash"
+                  code={`xcrun simctl list | grep '(Booted)'`}
+                />
+              </p>
             </>
           }
         ></PaperArticle>

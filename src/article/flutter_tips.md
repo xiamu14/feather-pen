@@ -198,3 +198,9 @@ This is How to fix it👇
 // 2. Run following command in terminal
 killall -9 dart
 ```
+
+### Search iOS Simulator Device
+
+```bash
+xcrun simctl list | grep '(Booted)'
+```

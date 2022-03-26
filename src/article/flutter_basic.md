@@ -107,11 +107,13 @@ CircleAvatar()
 
 调整透明度组件
 
-## Spacer 和 Expanded
+## Spacer 和 Expanded, Flexible
 
 ## GestureDetector
 
 用户手势检测组件，可以给组件添加手势（点击，滑动等）事件
+
+### vs. InkWell
 
 ## Material
 
@@ -129,3 +131,15 @@ Hero(
   ),
 ),
 ```
+
+## Row, Column , Wrap
+
+## 属性类
+
+### Decoration
+
+#### clipBehavior
+
+#### gradient
+
+#### image

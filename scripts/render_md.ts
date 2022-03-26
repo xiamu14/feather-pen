@@ -107,10 +107,20 @@ function parseHtml(html: string, articleName: string) {
       .replaceAll(/<\/?pre>/g, "");
 
     const formatArticle = prettier.format(article);
-    articleList.push({
-      href: `/${articleName}`,
-      ...meta,
-    });
+    // NOTE: 这里写入时应该做更新的
+    const articleHref = `/${articleName}`;
+    const index = articleList.findIndex((it) => it.href === articleHref);
+    if (index) {
+      articleList[index] = {
+        href: articleHref,
+        ...meta,
+      };
+    } else {
+      articleList.push({
+        href: articleHref,
+        ...meta,
+      });
+    }
     writeFileSync(
       path.resolve(rootDir, `pages/paper/${articleName}.tsx`),
       `${formatArticle}`
